@@ -1,0 +1,46 @@
+query GetPokemons($limit: Int = 10, $offset: Int = 1) {
+  pokemons(limit: $limit, offset: $offset) {
+    count
+    next
+    previous
+    status
+    message
+    results {
+      id
+      url
+      name
+      image
+    }
+  }
+}
+
+query GetPokemonDetail($name: String!) {
+  pokemon(name: $name) {
+    id
+    name
+    height
+    weight
+    sprites {
+      front_default
+    }
+    base_experience
+    message
+    status
+    order
+    abilities {
+      ability {
+        name
+      }
+      is_hidden
+      slot
+    }
+    types {
+      slot
+      type {
+        name
+      }
+    }
+
+  }
+}
+
