@@ -8,7 +8,7 @@ public final class GetPokemonsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query GetPokemons($limit: Int = 10, $offset: Int = 1) {
+    query GetPokemons($limit: Int = 50, $offset: Int = 1) {
       pokemons(limit: $limit, offset: $offset) {
         __typename
         count
