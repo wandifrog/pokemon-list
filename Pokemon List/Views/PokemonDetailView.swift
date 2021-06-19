@@ -12,10 +12,9 @@ struct PokemonDetailView: View {
     let name: String
     @State private var pokemon: GetPokemonDetailQuery.Data.Pokemon?
     
-    
     var body: some View {
         VStack {
-            KFImage(URL(string: pokemon?.sprites?.frontDefault ?? ""))
+            KFImage(URL(string: pokemon?.sprites?.frontDefault ?? "placeholder-image"))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 220, height: 220, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -58,7 +57,6 @@ struct PokemonDetailView: View {
         })
     }
 }
-
 
 struct PokemonDetailView_Previews: PreviewProvider {
     static var previews: some View {

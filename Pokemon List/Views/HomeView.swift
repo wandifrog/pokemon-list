@@ -12,7 +12,6 @@ struct HomeView: View {
     @State private var pokemons: [GetPokemonsQuery.Data.Pokemon.Result?] = []
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 if pokemons.isEmpty {
@@ -20,7 +19,7 @@ struct HomeView: View {
                 } else {
                     ScrollView (showsIndicators: true) {
                         ForEach(0 ..< pokemons.count) {
-                            PokemonCard(name: self.pokemons[$0]?.name ?? "", image: self.pokemons[$0]?.image ?? "")
+                            PokemonCard(name: self.pokemons[$0]?.name ?? "", image: self.pokemons[$0]?.image ?? "placeholder-image")
                         }
                     }
                 }
